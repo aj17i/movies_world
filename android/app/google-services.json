@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "382684463020",
+    "project_id": "moviesworld-e545b",
+    "storage_bucket": "moviesworld-e545b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382684463020:android:b3d2ce7bc439519f110409",
+        "android_client_info": {
+          "package_name": "com.example.movies_world"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd1LjlopRrvJXwfmbxg1o304VNVRq7Dyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
