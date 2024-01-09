@@ -24,13 +24,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void registerUser(Function(String text) update, String name, String email,
       String password) async {
     try {
-      // we need to first retrieve and decrypt the key
-      // send a JSON object using http post
       final response = await http
           .post(Uri.parse('http://$_baseURL/register.php'),
               headers: <String, String>{
                 'Content-Type': 'application/json; charset=UTF-8',
-              }, // convert the cid, name and key to a JSON object
+              }, // turn into a JSON
               body: convert.jsonEncode(<String, String>{
                 'username': name,
                 'email': email,
@@ -42,7 +40,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         // if successful, call the update function
         update(response.body);
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => SignInScreen()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => SignInScreen(),
+          ),
+        );
       }
     } catch (e) {
       update(e.toString());
@@ -145,8 +147,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fontSize: 16),
                   ),
                 ),
-                SizedBox(height: 30, ),
-                Text('Please Log In after Registration!', style: TextStyle(color: Colors.white.withOpacity(0.9)),),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Please Log In after Registration!',
+                  style: TextStyle(color: Colors.white.withOpacity(0.9)),
+                ),
               ],
             ),
           ),

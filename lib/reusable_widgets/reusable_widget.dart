@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert'as convert;
+const String _baseURL = 'movieaj.000webhostapp.com';
 
 Image logoWidget(String imageName) {
   return Image.asset(
@@ -182,6 +185,29 @@ class MovieDetailsPage extends StatelessWidget {
       required this.imageUrl,
       required this.description});
 
+  Future<void> saveMovie() async {
+    final response = await http
+        .post(Uri.parse('http://$_baseURL/saved.php'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: convert.jsonEncode(<String, String>{
+          'username': name,
+          'rating': rating.toString(),
+          'imageUrl': imageUrl,
+          'description': description,
+        }))
+        .timeout(const Duration(seconds: 5));
+
+    if (response.statusCode == 200) {
+      // Successfully saved the movie
+      // You can handle the response as needed
+    } else {
+      // Failed to save the movie
+      // Handle the error
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -273,29 +299,6 @@ class MovieDetailsPage extends StatelessWidget {
               ),
               const SizedBox(
                 height: 30,
-              ),
-              SizedBox(
-                width: 200,
-                height: 50,
-                child: ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.bookmark_add_sharp),
-                  label: const Text('Save Movie'),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.pressed)) {
-                        return Colors.black26;
-                      }
-                      return const Color.fromARGB(255, 7, 24, 63);
-                    }),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                    ),
-                  ),
-                ),
               ),
               const SizedBox(
                 height: 30,

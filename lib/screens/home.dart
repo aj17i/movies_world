@@ -9,12 +9,9 @@ import 'package:movies_world/category_pages/horror.dart';
 import 'package:movies_world/category_pages/murder_mystery.dart';
 import 'package:movies_world/category_pages/romance.dart';
 import 'package:movies_world/category_pages/sci_fi.dart';
-import 'package:movies_world/screens/profile_screen.dart';
+import 'package:movies_world/screens/add_screen.dart';
 import 'package:movies_world/screens/result_page.dart';
 import '../horizontal_carousel.dart';
-
-const String _baseURL = 'movieaj.000webhostapp.com';
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -144,7 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => ActionPage()),
+                                        builder: (context) => const ActionPage()),
                                   );
                                   break;
                                 case 1:
@@ -152,42 +149,42 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => AdventurePage()),
+                                        builder: (context) => const AdventurePage()),
                                   );
                                   break;
                                 case 2:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => AnimationPage()),
+                                        builder: (context) => const AnimationPage()),
                                   );
                                   break;
                                 case 3:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => ComedyPage()),
+                                        builder: (context) => const ComedyPage()),
                                   );
                                   break;
                                 case 4:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => DramaPage()),
+                                        builder: (context) => const DramaPage()),
                                   );
                                   break;
                                 case 5:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => FantasyPage()),
+                                        builder: (context) => const FantasyPage()),
                                   );
                                   break;
                                 case 6:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => HorrorPage()),
+                                        builder: (context) => const HorrorPage()),
                                   );
                                   break;
                                 case 7:
@@ -195,21 +192,21 @@ class _MyHomePageState extends State<MyHomePage> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            MurderMysteryPage()),
+                                            const MurderMysteryPage()),
                                   );
                                   break;
                                 case 8:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => RomancePage()),
+                                        builder: (context) => const RomancePage()),
                                   );
                                   break;
                                 case 9:
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => SciFiPage()),
+                                        builder: (context) => const SciFiPage()),
                                   );
                                   break;
 
@@ -224,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
-                                  categories[index] as String,
+                                  categories[index],
                                   style: const TextStyle(
                                       fontSize: 27, fontFamily: 'Rubik'),
                                 ),
@@ -245,7 +242,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             )
-          : ProfilePage(),
+          : const AddMoviesPage(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 7, 24, 63),
         selectedItemColor: Colors.white,
@@ -263,8 +260,8 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: 'Saved',
+            icon: Icon(Icons.video_camera_back_outlined),
+            label: 'Add',
           ),
         ],
       ),

@@ -89,6 +89,18 @@ flutter:
     - family: Laila
       fonts:
         - asset: assets/fonts/Laila-Medium.ttf
+    - family: One
+      fonts:
+        - asset: assets/fonts/Vodafone-Light.ttf
+    - family: Two
+      fonts:
+        - asset: assets/fonts/Vodafone.ttf
+    - family: Three
+      fonts:
+        - asset: assets/fonts/Vodafone-Bold.ttf
+    - family: Four
+      fonts:
+        - asset: assets/fonts/Vodafone-ExtraBold.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
