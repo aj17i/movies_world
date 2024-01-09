@@ -1,16 +1,6 @@
 # movies_world
 
-A new Flutter project.
+A flutter app that acts a movie duary where ypu keep track of the movies you have watched, rated and described you experience through!!!
 
-## Getting Started
+![login](https://github.com/aj17i/movies_world/assets/89919354/fd40827e-8ae5-411f-81c8-a29c42d9a9e4)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
